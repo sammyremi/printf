@@ -5,9 +5,10 @@
  * @v: integer to be converted
  * Return: pointer
  */
-char* _itoa(int v)
+char *_itoa(int v)
 {
 	char *ptr;
+
 	ptr = malloc(4);
 	sprintf(ptr, "%d", v);
 	return (ptr);
