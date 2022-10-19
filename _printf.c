@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 {
 	va_list valist;
 	int lent = 0;
-	int a, b = 0;
+	int a;
 	char *ch, *sh, *ph;
 	const char *string;
 
@@ -28,13 +28,9 @@ int _printf(const char *format, ...)
 				 string++;
 			}
 			if (*string == '\0')
-			{
 				break;
-			}
 			if (*string == '%')
-			{
 				string++;
-			}
 			switch (*string)
 			{
 				case 'c':
@@ -43,11 +39,11 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					ch = va_arg(valist, char *);
-					while (ch[b])
+					while (*ch != '\0')
 					{
 						lent++;
-						putchar(ch[b]);
-						b++;
+						putchar(*ch);
+						ch++;
 					}
 					lent--;
 					break;
@@ -56,30 +52,31 @@ int _printf(const char *format, ...)
 					break;
 				case 'd':
 					sh = _itoa(va_arg(valist, int));
-					while (sh[b])
+					while (*sh != '\0')
 					{
 						lent++;
-						putchar(sh[b]);
-						b++;
+						putchar(*sh);
+						sh++;
 					}
 					lent--;
-					free(sh);
 					break;
 				case 'i':
 					ph = _itoa(va_arg(valist, int));
-					while (ph[b])
+					while (*ph != '\0')
 					{
 						lent++;
-						putchar(ph[b]);
-						b++;
+						putchar(*ph);
+						ph++;
 					}
 					lent--;
-					free(ph);
 					break;
+				default :
+					putchar('%');
+					putchar(*string);
+					lent++;
 			}
 		}
 	}
 	va_end(valist);
-	putchar(10);
 	return (lent);
 }
