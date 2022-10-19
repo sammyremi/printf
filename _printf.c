@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 		{
 			while (*string != '%' && *string != '\0')
 			{
-				_putchar(*string);
+				 putchar(*string);
 				 lent++;
 				 string++;
 			}
@@ -39,27 +39,27 @@ int _printf(const char *format, ...)
 			{
 				case 'c':
 					a = va_arg(valist, int);
-					_putchar(a);
+					putchar(a);
 					break;
 				case 's':
 					ch = va_arg(valist, char *);
 					while (ch[b])
 					{
 						lent++;
-						_putchar(ch[b]);
+						putchar(ch[b]);
 						b++;
 					}
 					lent--;
 					break;
 				case '%':
-					_putchar('%');
+					putchar('%');
 					break;
 				case 'd':
 					sh = _itoa(va_arg(valist, int));
 					while (sh[b])
 					{
 						lent++;
-						_putchar(sh[b]);
+						putchar(sh[b]);
 						b++;
 					}
 					lent--;
@@ -70,7 +70,7 @@ int _printf(const char *format, ...)
 					while (ph[b])
 					{
 						lent++;
-						_putchar(ph[b]);
+						putchar(ph[b]);
 						b++;
 					}
 					lent--;
@@ -80,6 +80,6 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(valist);
-	_putchar(10);
+	putchar(10);
 	return (lent);
 }
