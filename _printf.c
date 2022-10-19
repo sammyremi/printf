@@ -23,9 +23,9 @@ int _printf(const char *format, ...)
 		{
 			while (*string != '%' && *string != '\0')
 			{
-				 putchar(*string);
-				 lent++;
-				 string++;
+				putchar(*string);
+				lent++;
+				string++;
 			}
 			if (*string == '\0')
 				break;
@@ -70,7 +70,7 @@ int _printf(const char *format, ...)
 					}
 					lent--;
 					break;
-				default :
+				default:
 					putchar('%');
 					putchar(*string);
 					lent++;
