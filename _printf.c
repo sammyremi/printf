@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	va_list valist;
 	int lent = 0;
 	int a;
-	char *ch, *sh, *ph;
+	char *ch, *sh;
 	const char *string;
 
 	va_start(valist, format);
@@ -61,12 +61,12 @@ int _printf(const char *format, ...)
 					lent--;
 					break;
 				case 'i':
-					ph = _itoa(va_arg(valist, int));
-					while (*ph != '\0')
+					sh = _itoa(va_arg(valist, int));
+					while (*sh != '\0')
 					{
 						lent++;
-						putchar(*ph);
-						ph++;
+						putchar(*sh);
+						sh++;
 					}
 					lent--;
 					break;
