@@ -19,5 +19,5 @@ This is used to print strings.
 # %
 This prints out the % sign.
 # Authors
-Adebayo Samuel <https://github.com/sammyremi>
-Right Praise <https://github.com/sophap>
+Adebayo Samuel "<https://github.com/sammyremi>"
+Right Praise "<https://github.com/sophap>"
